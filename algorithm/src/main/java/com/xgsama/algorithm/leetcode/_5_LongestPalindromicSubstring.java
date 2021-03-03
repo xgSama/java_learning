@@ -13,13 +13,19 @@ public class _5_LongestPalindromicSubstring {
     public static void main(String[] args) {
 
         String s = "地满红花红满地";
-        long l = System.currentTimeMillis();
+        String s1 = null;
+        String s2 = "a";
+
         System.out.println(longestPalindrome(s));
-        System.out.println(System.currentTimeMillis() - l);
+        System.out.println(longestPalindrome(s1));
+        System.out.println(longestPalindrome(s2));
 
     }
 
     public static String longestPalindrome(String s) {
+
+        if (s == null || s.length() < 1) return "";
+        if (s.length() == 1) return s;
 
         int len = s.length();
 
