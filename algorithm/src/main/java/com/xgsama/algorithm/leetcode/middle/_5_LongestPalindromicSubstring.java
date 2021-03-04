@@ -1,4 +1,4 @@
-package com.xgsama.algorithm.leetcode;
+package com.xgsama.algorithm.leetcode.middle;
 
 /**
  * _5_LongestPalindromicSubstring
