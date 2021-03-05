@@ -19,6 +19,8 @@ public class _35_SearchInsertPosition {
 
     }
 
+    // 二分查找 当起始位置重合时 start = mid = end
+    // 符合条件则返回当前位置 若不符合 则进行最后一次循环判断target是大还是小确定在前还是在后
     public static int searchInsert(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;
@@ -35,9 +37,6 @@ public class _35_SearchInsertPosition {
             }
         }
 
-
         return start;
-
-
     }
 }
