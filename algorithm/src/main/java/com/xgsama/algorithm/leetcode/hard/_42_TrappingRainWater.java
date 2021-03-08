@@ -1,7 +1,5 @@
 package com.xgsama.algorithm.leetcode.hard;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 /**
@@ -17,8 +15,8 @@ public class _42_TrappingRainWater {
      */
     public static void main(String[] args) {
 
-        int[] nums = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
-//        int[] nums = new int[]{4, 2, 0, 3, 2, 5};
+//        int[] nums = new int[]{0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1};
+        int[] nums = new int[]{3, 2, 1, 3};
 
         System.out.println(trap(nums));
 
