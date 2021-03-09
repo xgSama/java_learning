@@ -1,5 +1,7 @@
 package com.xgsama.algorithm.leetcode.simple;
 
+import com.xgsama.algorithm.leetcode.model.ListNode;
+
 /**
  * _21_MergeTwoSortedLists
  *
@@ -67,22 +69,5 @@ public class _21_MergeTwoSortedLists {
         tmp.next = l1 == null ? l2 : l1;
 
         return node.next;
-    }
-
-    static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode() {
-        }
-
-        ListNode(int val) {
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
     }
 }
