@@ -1,5 +1,9 @@
 package com.xgsama.algorithm.linkedlist;
 
+import com.xgsama.algorithm.model.ListNode;
+
+import static com.xgsama.algorithm.util.ListUtil.*;
+
 /**
  * Cycle
  *
@@ -9,35 +13,25 @@ package com.xgsama.algorithm.linkedlist;
 public class Cycle {
     public static void main(String[] args) {
 
-        Node node1 = new Node(1);
-        Node node2 = new Node(2);
-        Node node3 = new Node(3);
-        Node node4 = new Node(4);
-        Node node5 = new Node(5);
-        Node node6 = new Node(6);
+        ListNode head = create(1, 2, 3, 4, 5, 6);
 
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        node4.next = node5;
-        node5.next = node6;
-        node6.next = node1;
+        head.next.next.next.next.next.next = head.next;
 
-        System.out.println(isCycle(node1));
+        System.out.println(isCycle(head));
 
-        System.out.println(getCycleEntryNode(node1));
+        System.out.println(getCycleEntryNode(head));
 
-        System.out.println(getCycleLength(node1));
+        System.out.println(getCycleLength(head));
 
     }
 
-    public static boolean isCycle(Node header) {
+    public static boolean isCycle(ListNode header) {
         if (header == null) {
             return false;
         }
 
-        Node fast = header;
-        Node slow = header;
+        ListNode fast = header;
+        ListNode slow = header;
 
         // 快指针不为空，慢指针必不为空
         while (fast != null && fast.next != null) {
@@ -51,13 +45,13 @@ public class Cycle {
         return false;
     }
 
-    public static Node getCycleEntryNode(Node header) {
+    public static ListNode getCycleEntryNode(ListNode header) {
         if (header == null) {
             return null;
         }
 
-        Node fast = header;
-        Node slow = header;
+        ListNode fast = header;
+        ListNode slow = header;
 
         // 快指针不为空，慢指针必不为空
         while (fast != null && fast.next != null) {
@@ -82,13 +76,13 @@ public class Cycle {
         return null;
     }
 
-    public static int getCycleLength(Node header) {
+    public static int getCycleLength(ListNode header) {
         if (header == null) {
             return 0;
         }
 
-        Node fast = header;
-        Node slow = header;
+        ListNode fast = header;
+        ListNode slow = header;
         int res = 0;
 
         // 快指针不为空，慢指针必不为空

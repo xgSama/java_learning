@@ -1,6 +1,6 @@
 package com.xgsama.algorithm.leetcode.simple;
 
-import com.xgsama.algorithm.leetcode.model.ListNode;
+import com.xgsama.algorithm.model.ListNode;
 
 /**
  * _21_MergeTwoSortedLists

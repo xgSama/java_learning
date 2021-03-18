@@ -1,8 +1,6 @@
 package com.xgsama.algorithm.leetcode.middle;
 
-import com.xgsama.algorithm.leetcode.model.ListNode;
-
-import java.util.Stack;
+import com.xgsama.algorithm.model.ListNode;
 
 /**
  * _2_AddTwoNumbers

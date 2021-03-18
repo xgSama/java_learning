@@ -14,8 +14,16 @@ public class Test {
 
     public static void main(String[] args) {
         int[] nums = new int[]{3, 2, 1, 3};
-
         System.out.println(trap(nums));
+
+        Test t = new Test();
+        int[] nums1 = new int[]{3, 2, 1, 3};
+        t.quickSort(nums1, 0, nums.length - 1);
+        for (int num : nums1) {
+            System.out.print(num + " ");
+        }
+
+
     }
 
     public static int trap(int[] height) {
@@ -53,6 +61,42 @@ public class Test {
 
         return res;
 
+    }
+
+    public void quickSort(int[] arr, int left, int right) {
+        if (left >= right) return;
+
+        int pivot = par(arr, left, right);
+
+        quickSort(arr, left, pivot - 1);
+        quickSort(arr, pivot + 1, right);
+
+    }
+
+    public int par(int[] arr, int left, int right) {
+
+        int pivot = arr[right];
+        int tail = left - 1;
+
+        for (int i = left; i < right; i++) {
+            if (arr[i] < pivot) {
+                swap(arr, ++tail, i);
+            }
+
+        }
+
+        swap(arr, tail + 1, right);
+
+
+        return tail + 1;
+
+
+    }
+
+    public void swap(int[] arr, int i, int k) {
+        int tmp = arr[i];
+        arr[i] = arr[k];
+        arr[k] = tmp;
     }
 
 }

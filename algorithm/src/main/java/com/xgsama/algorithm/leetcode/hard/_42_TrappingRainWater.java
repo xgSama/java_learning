@@ -1,5 +1,6 @@
 package com.xgsama.algorithm.leetcode.hard;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 /**
