@@ -7,16 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jvm" />
-        <module name="java_basis" />
-        <module name="api_use" />
+        <module name="java-basis" />
+        <module name="api-use" />
         <module name="algorithm" />
         <module name="netty" />
+        <module name="design-patterns" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="algorithm" target="8" />
-      <module name="api_use" target="8" />
-      <module name="java_basis" target="8" />
+      <module name="api-use" target="8" />
+      <module name="design-patterns" target="8" />
+      <module name="java-basis" target="8" />
       <module name="java_learning" target="1.5" />
       <module name="jvm" target="7" />
       <module name="netty" target="8" />

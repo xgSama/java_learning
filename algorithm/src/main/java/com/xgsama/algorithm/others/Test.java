@@ -11,21 +11,22 @@ import java.util.Stack;
  * @date 2021/3/17 21:07
  */
 public class Test {
+
     static ListNode res = new ListNode(0);
 
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        node1.next = node2;
-        ListNode node3 = new ListNode(3);
-        node2.next = node3;
-
-        ReverseList(node1);
-
-        while (res != null) {
-            System.out.println(res);
-            res = res.next;
-        }
+//        ListNode node1 = new ListNode(1);
+//        ListNode node2 = new ListNode(2);
+//        node1.next = node2;
+//        ListNode node3 = new ListNode(3);
+//        node2.next = node3;
+//
+//        ReverseList(node1);
+//
+//        while (res != null) {
+//            System.out.println(res);
+//            res = res.next;
+//        }
 
 
     }
