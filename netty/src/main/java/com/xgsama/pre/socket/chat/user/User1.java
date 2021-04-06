@@ -1,6 +1,6 @@
-package com.xgsama.netty.socket.chat.user;
+package com.xgsama.pre.socket.chat.user;
 
-import com.xgsama.netty.socket.chat.Client;
+import com.xgsama.pre.socket.chat.Client;
 
 /**
  * User1

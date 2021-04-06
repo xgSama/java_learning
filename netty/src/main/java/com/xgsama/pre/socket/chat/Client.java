@@ -1,6 +1,4 @@
-package com.xgsama.netty.socket.chat;
-
-import org.junit.Test;
+package com.xgsama.pre.socket.chat;
 
 import java.io.*;
 import java.net.Socket;

@@ -1,4 +1,4 @@
-package com.xgsama.netty.socket.chat;
+package com.xgsama.pre.socket.chat;
 
 import java.io.Closeable;
 

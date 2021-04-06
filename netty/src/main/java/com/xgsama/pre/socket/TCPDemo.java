@@ -1,4 +1,4 @@
-package com.xgsama.netty.socket;
+package com.xgsama.pre.socket;
 
 import org.junit.Test;
 

@@ -36,10 +36,24 @@ public class Test {
 //        }
 //        map.size();
 
-        Map<String, String> map = ParamUtil.fromArgs(args);
-        for (Map.Entry<String, String> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + ":" + entry.getValue());
+//        Map<String, String> map = ParamUtil.fromArgs(args);
+//        for (Map.Entry<String, String> entry : map.entrySet()) {
+//            System.out.println(entry.getKey() + ":" + entry.getValue());
+//        }
+        int res = 0;
+
+        for (int i = 7; i <= 9997; i++) {
+            String s = Integer.toString(i);
+
+            for (int j = 0; j < s.length(); j++) {
+                if (s.charAt(j) == '7') {
+                    res++;
+                }
+            }
+
         }
+
+        System.out.println(res);
 
 
     }

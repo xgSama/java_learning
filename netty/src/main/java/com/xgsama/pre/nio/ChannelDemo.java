@@ -1,4 +1,4 @@
-package com.xgsama.netty.nio;
+package com.xgsama.pre.nio;
 
 import com.xgsama.util.CommonUtil;
 import org.junit.Test;

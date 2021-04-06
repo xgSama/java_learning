@@ -1,11 +1,10 @@
-package com.xgsama.netty.socket;
+package com.xgsama.pre.socket;
 
 import org.junit.Test;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
 
 /**
  * UDPDemo

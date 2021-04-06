@@ -1,4 +1,4 @@
-package com.xgsama.netty.socket;
+package com.xgsama.pre.socket;
 
 import java.io.File;
 import java.io.FileOutputStream;
