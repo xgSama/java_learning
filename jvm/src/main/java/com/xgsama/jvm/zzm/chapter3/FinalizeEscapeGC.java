@@ -1,4 +1,4 @@
-package com.xgsama.jvm.chapter3;
+package com.xgsama.jvm.zzm.chapter3;
 
 /**
  * FinalizeEscapeGC

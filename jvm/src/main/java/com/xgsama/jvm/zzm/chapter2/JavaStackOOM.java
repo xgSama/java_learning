@@ -1,4 +1,4 @@
-package com.xgsama.jvm.chapter2;
+package com.xgsama.jvm.zzm.chapter2;
 
 /**
  * JavaStackOOM

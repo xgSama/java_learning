@@ -1,4 +1,4 @@
-package com.xgsama.jvm.chapter7;
+package com.xgsama.jvm.zzm.chapter7;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -31,7 +31,7 @@ public class ClassLoaderTest {
             }
         };
 
-        Object obj = myLoader.loadClass("com.xgsama.jvm.chapter7.ClassLoaderTest").newInstance();
+        Object obj = myLoader.loadClass("com.xgsama.jvm.zzm.chapter7.ClassLoaderTest").newInstance();
         System.out.println(obj.getClass());
         System.out.println(obj instanceof ClassLoaderTest);
     }

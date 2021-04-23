@@ -67,4 +67,13 @@ public class _17_LetterCombinationsOfAPhoneNumber {
             str.deleteCharAt(index);
         }
     }
+
+    /**
+     * _LongestIncreasingSubsequence
+     *
+     * @author xgSama
+     * @date 2021/4/20 13:57
+     */
+    public static class _300_LongestIncreasingSubsequence {
+    }
 }

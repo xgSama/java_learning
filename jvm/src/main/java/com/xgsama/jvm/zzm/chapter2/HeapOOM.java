@@ -1,4 +1,4 @@
-package com.xgsama.jvm.chapter2;
+package com.xgsama.jvm.zzm.chapter2;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +34,5 @@ public class HeapOOM {
  * 	at java.util.ArrayList.ensureExplicitCapacity(ArrayList.java:239)
  * 	at java.util.ArrayList.ensureCapacityInternal(ArrayList.java:231)
  * 	at java.util.ArrayList.add(ArrayList.java:462)
- * 	at com.xgsama.jvm.chapter2.HeapOOM.main(HeapOOM.java:21)
+ * 	at com.xgsama.jvm.zzm.chapter2.HeapOOM.main(HeapOOM.java:21)
  */

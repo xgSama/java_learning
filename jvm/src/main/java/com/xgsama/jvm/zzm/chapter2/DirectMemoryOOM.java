@@ -1,4 +1,4 @@
-package com.xgsama.jvm.chapter2;
+package com.xgsama.jvm.zzm.chapter2;
 
 import sun.misc.Unsafe;
 
@@ -27,5 +27,5 @@ public class DirectMemoryOOM {
 /*
  * Exception in thread "main" java.lang.OutOfMemoryError
  * 	at sun.misc.Unsafe.allocateMemory(Native Method)
- * 	at com.xgsama.jvm.chapter2.DirectMemoryOOM.main(DirectMemoryOOM.java:22)
+ * 	at com.xgsama.jvm.zzm.chapter2.DirectMemoryOOM.main(DirectMemoryOOM.java:22)
  */
