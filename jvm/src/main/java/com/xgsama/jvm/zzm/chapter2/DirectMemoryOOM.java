@@ -11,6 +11,7 @@ import java.lang.reflect.Field;
  * @author xgSama
  * @date 2020/12/12 15:24
  */
+@SuppressWarnings("all")
 public class DirectMemoryOOM {
     private static final int _1MB = 1024 * 1024;
 
