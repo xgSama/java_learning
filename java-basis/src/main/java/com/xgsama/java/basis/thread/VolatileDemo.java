@@ -1,4 +1,4 @@
-package com.xgsama.java.basis.jdbc;
+package com.xgsama.java.basis.thread;
 
 /**
  * VolatileDemo

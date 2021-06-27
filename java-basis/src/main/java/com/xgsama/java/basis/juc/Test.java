@@ -13,5 +13,12 @@ import java.util.concurrent.locks.Lock;
 public class Test extends AbstractQueuedSynchronizer {
 
     public static void main(String[] args) {
+
+        System.out.println(1 << 27 - 1);
+
+        System.out.println(Integer.toBinaryString(1 << 27 - 1));
+        String s = Integer.toBinaryString(-1 << 27);
+        System.out.println(s);
+        System.out.println(s.length());
     }
 }
