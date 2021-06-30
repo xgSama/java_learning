@@ -1,4 +1,4 @@
-package com.xgsama.java.basis.juc;
+package com.xgsama.java.concurrent.juc;
 
 import java.util.concurrent.TimeUnit;
 import java.util.ArrayList;

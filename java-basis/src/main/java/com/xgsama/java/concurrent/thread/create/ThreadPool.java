@@ -23,17 +23,20 @@ public class ThreadPool {
                 new ArrayBlockingQueue<>(QUEUE_CAPACITY),
                 new ThreadPoolExecutor.CallerRunsPolicy());
 
-        for (int i = 0; i < 10; i++) {
 
-            Future<Long> future = executor.submit(new Callable<Long>() {
-                @Override
-                public Long call() throws Exception {
-                    Thread.sleep(3000);
-                    System.out.println("异步任务开始。。。。");
-                    return 3L;
-                }
-            });
+        Future<Long> future = executor.submit(new Callable<Long>() {
+            @Override
+            public Long call() throws Exception {
+                Thread.sleep(3000);
+                System.out.println("异步任务开始。。。。");
+                return 3L;
+            }
+        });
 
+        Long result = future.get();
+        System.out.println("异步任务结果：" + result);
+
+        for (int i = 0; i < 5; i++) {
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
@@ -42,13 +45,7 @@ public class ThreadPool {
                     }
                 }
             });
-
-
-//            Long result = future.get();
-//            System.out.println("异步任务结果：" + result);
-
         }
-
 
         //终止线程池
         executor.shutdown();

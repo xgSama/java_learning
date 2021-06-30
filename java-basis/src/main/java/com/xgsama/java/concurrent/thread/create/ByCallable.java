@@ -11,9 +11,7 @@ import java.util.concurrent.FutureTask;
  */
 public class ByCallable {
 
-    public static final int MAX_TRUE = 5;
     public static final int COMPUTE_TIME = 1000000;
-
 
     static class ThreadDemo implements Callable<Long> {
         @Override

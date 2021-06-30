@@ -1,4 +1,4 @@
-package com.xgsama.java.basis.juc;
+package com.xgsama.java.concurrent.juc;
 
 /**
  * PrintABCUseSyn

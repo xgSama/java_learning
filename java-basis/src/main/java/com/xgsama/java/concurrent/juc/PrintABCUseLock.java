@@ -1,4 +1,4 @@
-package com.xgsama.java.basis.juc;
+package com.xgsama.java.concurrent.juc;
 
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -26,20 +26,23 @@ public class PrintABCUseLock {
                 state++;
                 i++;
                 System.out.println(name);
+            } else {
+                System.out.println("------");
             }
             lock.unlock();
         }
     }
 
     public static void main(String[] args) {
-        final PrintABCUseLock loopThead = new PrintABCUseLock(2);
-        new Thread(() -> {
-            loopThead.printer("B", 1);
-        }, "B").start();
+        final PrintABCUseLock loopThead = new PrintABCUseLock(1);
 
         new Thread(() -> {
             loopThead.printer("A", 0);
         }, "A").start();
+
+        new Thread(() -> {
+            loopThead.printer("B", 1);
+        }, "B").start();
 
         new Thread(() -> {
             loopThead.printer("C", 2);

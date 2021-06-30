@@ -1,7 +1,6 @@
-package com.xgsama.java.basis.juc;
+package com.xgsama.java.concurrent.juc;
 
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
-import java.util.concurrent.locks.Lock;
 
 /**
  * Test
