@@ -22,6 +22,11 @@ target/
 .idea/**/uiDesigner.xml
 .idea/**/dbnavigator.xml
 
+### macOS ###
+*.DS_Store
+.AppleDouble
+.LSOverride
+
 # Gradle
 .idea/**/gradle.xml
 .idea/**/libraries

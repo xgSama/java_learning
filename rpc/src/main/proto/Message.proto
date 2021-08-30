@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package com.xgsama.rpc.protocol;
+option java_package = "com.xgsama.rpc.entity";
+option java_outer_classname = "MsgProto";
+
+message Msg {
+  uint32 id = 1;
+  string content = 2;
+}

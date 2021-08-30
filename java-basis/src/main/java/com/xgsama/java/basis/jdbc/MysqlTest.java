@@ -12,7 +12,7 @@ import java.sql.*;
 public class MysqlTest {
     public static void main(String[] args) throws Exception {
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connection = DriverManager.getConnection("jdbc:mysql://47.103.218.168:3307/test", "root", "cyz19980815");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://47.103.218.168:3307/test?useSSL=false", "root", "cyz19980815");
 
         String sql = "select * from test";
         PreparedStatement ps = connection.prepareStatement(sql);

@@ -6,10 +6,11 @@
       <module fileurl="file://$PROJECT_DIR$/api-use/api-use.iml" filepath="$PROJECT_DIR$/api-use/api-use.iml" />
       <module fileurl="file://$PROJECT_DIR$/design-patterns/design-patterns.iml" filepath="$PROJECT_DIR$/design-patterns/design-patterns.iml" />
       <module fileurl="file://$PROJECT_DIR$/java-basis/java-basis.iml" filepath="$PROJECT_DIR$/java-basis/java-basis.iml" />
-      <module fileurl="file://$PROJECT_DIR$/java_common/java_common.iml" filepath="$PROJECT_DIR$/java_common/java_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java-common/java-common.iml" filepath="$PROJECT_DIR$/java-common/java-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/java_learning.iml" filepath="$PROJECT_DIR$/java_learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/jvm/jvm.iml" filepath="$PROJECT_DIR$/jvm/jvm.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty/netty.iml" filepath="$PROJECT_DIR$/netty/netty.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rpc/rpc.iml" filepath="$PROJECT_DIR$/rpc/rpc.iml" />
     </modules>
   </component>
 </project>

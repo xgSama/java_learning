@@ -1,10 +1,13 @@
 package com.xgsama.java.basis;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Stream;
@@ -16,15 +19,29 @@ import java.util.stream.Stream;
  * @version 1.0
  * @date 2020/10/11 15:26
  */
+@Slf4j
 public class Test {
 
     public static void main(String[] args) throws IOException {
         List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
+        log.info(numbers.toString());
         Stream<String> result = numbers.stream()
                 .sorted((i1, i2) -> i2 - i1)
                 .flatMap((Function<Integer, Stream<String>>) integer -> Stream.of(integer + "wwww"));
 
         result.forEach(System.out::println);
+
+       test();
+    }
+
+    public static void test() {
+        Calendar calendar = Calendar.getInstance();
+        calendar.setFirstDayOfWeek(Calendar.SUNDAY);//设置星期一为一周开始的第一天
+        calendar.setMinimalDaysInFirstWeek(4);//可以不用设置
+        calendar.setTimeInMillis(System.currentTimeMillis());//获得当前的时间戳
+        int weekYear = calendar.get(Calendar.YEAR);//获得当前的年
+        int weekOfYear = calendar.get(Calendar.WEEK_OF_YEAR);//获得当前日期属于今年的第几周
+        System.out.println(weekYear + "\t" + weekOfYear);
     }
 
 //    public static double abs(double a) {

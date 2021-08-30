@@ -8,8 +8,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jvm" />
+        <module name="rpc" />
         <module name="java-basis" />
-        <module name="java_common" />
+        <module name="java-common" />
         <module name="api-use" />
         <module name="algorithm" />
         <module name="netty" />
@@ -20,11 +21,12 @@
       <module name="algorithm" target="11" />
       <module name="api-use" target="8" />
       <module name="design-patterns" target="8" />
-      <module name="java-basis" target="11" />
-      <module name="java_common" target="11" />
-      <module name="java_learning" target="11" />
-      <module name="jvm" target="11" />
+      <module name="java-basis" target="8" />
+      <module name="java-common" target="8" />
+      <module name="java_learning" target="8" />
+      <module name="jvm" target="8" />
       <module name="netty" target="8" />
+      <module name="rpc" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

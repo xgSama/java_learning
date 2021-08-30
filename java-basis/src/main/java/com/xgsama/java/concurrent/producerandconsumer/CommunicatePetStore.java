@@ -23,7 +23,7 @@ public class CommunicatePetStore {
         // 保存数据
         private final List<T> dataList = new LinkedList<>();
         // 数据缓冲区长度
-        private Integer amount = 0;
+        private volatile Integer amount = 0;
 
         private final Object LOCK_OBJECT = new Object();
         private final Object NOT_FULL = new Object();
@@ -40,8 +40,10 @@ public class CommunicatePetStore {
             }
 
             synchronized (LOCK_OBJECT) {
-                dataList.add(element);
-                amount++;
+                if (amount < MAX_AMOUNT) {
+                    dataList.add(element);
+                    amount++;
+                }
             }
 
             synchronized (NOT_EMPTY) {
@@ -61,7 +63,9 @@ public class CommunicatePetStore {
 
             T element = null;
             synchronized (LOCK_OBJECT) {
-                element = dataList.remove(0);
+                if (amount > 0) {
+                    element = dataList.remove(0);
+                }
                 amount--;
             }
 

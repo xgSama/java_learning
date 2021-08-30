@@ -23,7 +23,7 @@ public class URLDemo {
 
         InputStream inputStream = urlConnection.getInputStream();
 
-        FileOutputStream fileOutputStream = new FileOutputStream(new File("F:\\JAVA\\java_learning\\input\\url.png"));
+        FileOutputStream fileOutputStream = new FileOutputStream(new File("input/url.png"));
 
         byte[] buf = new byte[512];
         int len;
