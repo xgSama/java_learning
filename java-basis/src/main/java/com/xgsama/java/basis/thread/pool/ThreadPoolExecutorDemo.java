@@ -16,10 +16,11 @@ public class ThreadPoolExecutorDemo {
     private static final int MAX_POOL_SIZE = 10;
     private static final int QUEUE_CAPACITY = 100;
     private static final Long KEEP_ALIVE_TIME = 1L;
+
     public static void main(String[] args) {
 
-        //使用阿里巴巴推荐的创建线程池的方式
-        //通过ThreadPoolExecutor构造函数自定义参数创建
+        // 使用阿里巴巴推荐的创建线程池的方式
+        // 通过ThreadPoolExecutor构造函数自定义参数创建
         ThreadPoolExecutor executor = new ThreadPoolExecutor(
                 CORE_POOL_SIZE,
                 MAX_POOL_SIZE,

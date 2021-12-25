@@ -26,6 +26,8 @@ public class EchoServerHandler extends ChannelInboundHandlerAdapter {
         ctx.write(in);
     }
 
+
+
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         // 将未决消息冲刷到远程节点，并且关闭该Channel

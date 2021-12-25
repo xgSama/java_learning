@@ -16,7 +16,7 @@ public class InHandlerDemoTest {
     public static void main(String[] args) {
         InHandlerDemo inHandler = new InHandlerDemo();
 
-        ChannelInitializer<EmbeddedChannel> i = new ChannelInitializer<>() {
+        ChannelInitializer<EmbeddedChannel> i = new ChannelInitializer<EmbeddedChannel>() {
 
             @Override
             protected void initChannel(EmbeddedChannel ch) throws Exception {

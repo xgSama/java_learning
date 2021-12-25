@@ -1,6 +1,6 @@
 package com.xgsama.pre.nio;
 
-import com.xgsama.util.CommonUtil;
+import com.xgsama.common.util.ReleaseUtil;
 import org.junit.Test;
 
 import java.io.FileInputStream;
@@ -51,7 +51,7 @@ public class ChannelDemo {
 
         }
 
-        CommonUtil.release(fosChannel, fisChannel, fos, fis);
+        ReleaseUtil.release(fosChannel, fisChannel, fos, fis);
 
         System.out.println(Instant.now().toEpochMilli() - start);
 
@@ -76,7 +76,7 @@ public class ChannelDemo {
         outMappedBuffer.put(dst);
 
 
-        CommonUtil.release(outChannel, inChannel);
+        ReleaseUtil.release(outChannel, inChannel);
 
 
         System.out.println(Instant.now().toEpochMilli() - start);

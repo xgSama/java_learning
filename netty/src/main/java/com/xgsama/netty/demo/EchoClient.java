@@ -26,19 +26,27 @@ public class EchoClient {
     }
 
     public void start() throws Exception {
+        // 创建反应器轮询
         EventLoopGroup group = new NioEventLoopGroup();
         try {
+            // 客户端创建Bootstrap
             Bootstrap b = new Bootstrap();
+            // Bootstrap绑定EventLoopGroup
             b.group(group)
+                    // 指定所使用的NIO传输Channel
                     .channel(NioSocketChannel.class)
+                    // 绑定服务端地址
                     .remoteAddress(new InetSocketAddress(host, port))
+                    // 用于处理请求的ChannelHandler
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             socketChannel.pipeline().addLast(new EchoClientHandler());
                         }
                     });
+            // 异步地绑定服务器；调用sync()方法阻塞等待直到绑定完成
             ChannelFuture f = b.connect().sync();
+            // 获取Channel 的CloseFuture，并且阻塞当前线程直到它完成
             f.channel().closeFuture().sync();
         } finally {
             group.shutdownGracefully().sync();
@@ -46,17 +54,9 @@ public class EchoClient {
     }
 
     public static void main(String[] args) throws Exception {
-//        if (args.length != 2) {
-//            System.err.println(
-//                    "Usage: " + EchoClient.class.getSimpleName() +
-//                            " <host> <port>");
-//            return;
-//        }
 
-//        String host = args[0];
         String host = "localhost";
-//        int port = Integer.parseInt(args[1]);
-        new EchoClient(host, 9998).start();
+        new EchoClient(host, 7077).start();
 
     }
 }

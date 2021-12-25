@@ -34,7 +34,7 @@ public class PrintABCUseLock {
     }
 
     public static void main(String[] args) {
-        final PrintABCUseLock loopThead = new PrintABCUseLock(1);
+        final PrintABCUseLock loopThead = new PrintABCUseLock(2);
 
         new Thread(() -> {
             loopThead.printer("A", 0);

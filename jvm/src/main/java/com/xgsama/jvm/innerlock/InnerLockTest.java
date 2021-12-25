@@ -23,7 +23,6 @@ public class InnerLockTest {
         System.out.println(13 & 15);
     }
 
-
     @org.junit.Test
     public void showNoLockObject() throws InterruptedException {
         //输出JVM的信息

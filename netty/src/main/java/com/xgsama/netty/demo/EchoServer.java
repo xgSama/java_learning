@@ -23,14 +23,6 @@ public class EchoServer {
         this.port = port;
     }
 
-    public static void main(String[] args) throws InterruptedException {
-        if (args.length != 1) {
-            System.err.println("Usage: " + EchoServer.class.getSimpleName() + " <port>");
-        }
-        int port = Integer.parseInt(args[0]);
-        new EchoServer(port).start();
-    }
-
     public void start() throws InterruptedException {
         final EchoServerHandler serverHandler = new EchoServerHandler();
         // 1、创建EventLoopGroup
@@ -62,5 +54,10 @@ public class EchoServer {
             // 8、关闭EventLoopGroup，释放所有的资源
             group.shutdownGracefully().sync();
         }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        int port = 7077;
+        new EchoServer(port).start();
     }
 }

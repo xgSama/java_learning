@@ -1,5 +1,6 @@
 package com.xgsama.apiuse.es;
 
+import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.ElasticsearchException;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.index.IndexResponse;
@@ -18,10 +19,12 @@ import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
  * @author xgSama
  * @date 2021/2/22 17:08
  */
+@Slf4j
 public class DocumentApis extends Client {
 
 
     public static void main(String[] args) {
+        log.info("pp");
         DocumentApis documentApis = new DocumentApis();
         documentApis.index();
 

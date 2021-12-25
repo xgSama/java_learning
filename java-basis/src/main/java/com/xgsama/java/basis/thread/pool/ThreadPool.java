@@ -1,4 +1,4 @@
-package com.xgsama.java.basis.thread;
+package com.xgsama.java.basis.thread.pool;
 
 /**
  * ThreadPool

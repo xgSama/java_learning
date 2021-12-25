@@ -60,6 +60,6 @@ public class GroupChatClient {
     }
 
     public static void main(String[] args) throws Exception {
-        new GroupChatClient("localhost", 9998).run();
+        new GroupChatClient("localhost", 7000).run();
     }
 }

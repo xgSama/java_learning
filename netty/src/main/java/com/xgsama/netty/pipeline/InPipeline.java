@@ -42,7 +42,7 @@ public class InPipeline {
     }
 
     public static void main(String[] args) {
-        ChannelInitializer<EmbeddedChannel> i = new ChannelInitializer<>() {
+        ChannelInitializer<EmbeddedChannel> i = new ChannelInitializer<EmbeddedChannel>() {
 
             @Override
             protected void initChannel(EmbeddedChannel ch) throws Exception {
