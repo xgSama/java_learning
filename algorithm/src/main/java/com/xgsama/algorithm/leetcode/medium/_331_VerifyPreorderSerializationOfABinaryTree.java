@@ -1,7 +1,5 @@
-package com.xgsama.algorithm.leetcode.middle;
+package com.xgsama.algorithm.leetcode.medium;
 
-import java.util.LinkedList;
-import java.util.List;
 import java.util.Stack;
 
 /**

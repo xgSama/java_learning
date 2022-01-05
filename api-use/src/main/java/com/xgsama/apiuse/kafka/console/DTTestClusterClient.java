@@ -22,7 +22,8 @@ public class DTTestClusterClient {
     static {
 
         Properties props = new Properties();
-        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConfig.brokerList);
+//        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConfig.brokerList);
+        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
         props.setProperty(AdminClientConfig.CLIENT_ID_CONFIG, "admin-client-java");
         client = AdminClient.create(props);
     }
@@ -30,15 +31,22 @@ public class DTTestClusterClient {
 
     public static void main(String[] args) throws Exception {
 //        addTopics("topic-demo");
+        client.listTopics().listings().get().forEach(new Consumer<TopicListing>() {
+            @Override
+            public void accept(TopicListing topicListing) {
+                System.out.println(topicListing);
+            }
+        });
 
-        resetOffset();
+//        client.deleteTopics(Collections.singletonList("topic-demo")).all().get();
+//        resetOffset();
     }
 
     public static boolean addTopics(String... topics) {
 
         List<NewTopic> createTopics = new ArrayList<>();
         for (String topic : topics) {
-            createTopics.add(new NewTopic(topic, 2, (short) 2));
+            createTopics.add(new NewTopic(topic, 1, (short) 1));
         }
 
         CreateTopicsResult result = client.createTopics(createTopics);

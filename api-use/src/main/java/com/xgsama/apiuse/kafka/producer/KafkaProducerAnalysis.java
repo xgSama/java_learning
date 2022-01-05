@@ -31,7 +31,7 @@ public class KafkaProducerAnalysis {
         String str = "";
 
         while ((str = bufferedReader.readLine()) != null) {
-            RecordMetadata recordMetadata = producer.send(new ProducerRecord<>("topic-demo", str)).get();
+            RecordMetadata recordMetadata = producer.send(new ProducerRecord<>("topic-binlog", str)).get();
 
         }
     }

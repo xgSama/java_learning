@@ -1,4 +1,4 @@
-package com.xgsama.algorithm.leetcode.middle;
+package com.xgsama.algorithm.leetcode.medium;
 
 /**
  * _74_Search2DMatrix

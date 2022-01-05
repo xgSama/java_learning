@@ -1,4 +1,4 @@
-package com.xgsama.algorithm.leetcode.middle;
+package com.xgsama.algorithm.leetcode.medium;
 
 import com.xgsama.algorithm.model.ListNode;
 
