@@ -40,4 +40,20 @@ public class _62_UniquePaths {
 
         return dp[m - 1][n - 1];
     }
+
+    public int uniquePaths2(int m, int n) {
+
+        int[] dp = new int[n];
+        dp[0] = 1;
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                if (j > 0) {
+                    dp[j] = dp[j] + dp[j - 1];
+                }
+            }
+        }
+
+        return dp[n - 1];
+    }
 }

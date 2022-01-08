@@ -17,8 +17,8 @@ public class _63_UniquePaths2 {
 
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
 
-        int row = obstacleGrid.length - 1;
-        int col = obstacleGrid[0].length - 1;
+        int row = obstacleGrid.length;
+        int col = obstacleGrid[0].length;
 
         int[][] dp = new int[row][col];
 
@@ -26,8 +26,9 @@ public class _63_UniquePaths2 {
 
         for (int i = 0; i < row; i++) {
             for (int j = 0; j < col; j++) {
-
-                if (obstacleGrid[i][j] != 1) {
+                if (obstacleGrid[i][j] == 1) {
+                    dp[i][j] = 0;
+                } else {
                     if (i > 0 && j > 0) {
                         dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
                     } else if (i > 0) {
@@ -40,7 +41,29 @@ public class _63_UniquePaths2 {
             }
         }
 
-        return dp[row][col];
+        return dp[row - 1][col - 1];
+    }
 
+    public int uniquePathsWithObstacles2(int[][] obstacleGrid) {
+        int row = obstacleGrid.length;
+        int col = obstacleGrid[0].length;
+
+        int[] dp = new int[col];
+        dp[0] = obstacleGrid[0][0] == 1 ? 0 : 1;
+
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < col; j++) {
+                if (obstacleGrid[i][j] == 1) {
+                    dp[j] = 0;
+                } else {
+                    if (j > 0) {
+                        dp[j] = dp[j] + dp[j - 1];
+                    }
+                }
+            }
+        }
+
+
+        return dp[col - 1];
     }
 }
