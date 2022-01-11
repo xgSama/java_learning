@@ -36,7 +36,7 @@ public class StickyPacketClient {
                     ch.pipeline().addLast(new ChannelInboundHandlerAdapter() {
                         @Override
                         public void channelActive(ChannelHandlerContext ctx) throws Exception {
-                            for (int i = 0; i < 100; i++) {
+                            for (int i = 0; i < 10; i++) {
                                 ByteBuf buf = ctx.alloc().buffer();
                                 buf.writeBytes(new byte[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17});
                                 ctx.writeAndFlush(buf);

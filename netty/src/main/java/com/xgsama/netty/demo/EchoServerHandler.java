@@ -2,10 +2,7 @@ package com.xgsama.netty.demo;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
-import io.netty.channel.ChannelFutureListener;
-import io.netty.channel.ChannelHandler;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
+import io.netty.channel.*;
 
 import java.nio.charset.StandardCharsets;
 
@@ -16,24 +13,18 @@ import java.nio.charset.StandardCharsets;
  * @date 2021/3/31 10:59
  */
 @ChannelHandler.Sharable // 标示一个ChannelHandler可以被多个Channel安全地共享
-public class EchoServerHandler extends ChannelInboundHandlerAdapter {
+public class EchoServerHandler extends SimpleChannelInboundHandler<String> {
+
     @Override
-    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-        ByteBuf in = (ByteBuf) msg;
-        // 将消息记录到控制台
-        System.out.println("Server received: " + in.toString(StandardCharsets.UTF_8));
-        // 将接收到的消息写给发送者，而不冲刷出站消息
-        ctx.write(in);
+    protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
+        System.out.println(msg);
+        ctx.writeAndFlush(msg);
     }
-
-
 
     @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         // 将未决消息冲刷到远程节点，并且关闭该Channel
-        ctx
-                .writeAndFlush(Unpooled.EMPTY_BUFFER)
-                .addListener(ChannelFutureListener.CLOSE);
+        super.channelReadComplete(ctx);
     }
 
     @Override

@@ -3,10 +3,15 @@ package com.xgsama.netty.demo;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
+import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.string.StringDecoder;
+import io.netty.handler.codec.string.StringEncoder;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 
 import java.net.InetSocketAddress;
 
@@ -31,9 +36,13 @@ public class EchoServer {
         try {
             // 2、创建ServerBootstrap
             ServerBootstrap b = new ServerBootstrap();
-            b.group(group)
+            b
+                    .group(group)
                     // 3、指定所使用的NIO传输Channel
                     .channel(NioServerSocketChannel.class)
+                    .option(ChannelOption.SO_BACKLOG, 128)
+                    .childOption(ChannelOption.SO_KEEPALIVE, true)
+                    .childOption(ChannelOption.TCP_NODELAY, true)
                     // 4、使用指定的端口设置套接字地址
                     .localAddress(new InetSocketAddress(port))
                     // 5、添加一个EchoServerHandler到子Channel的ChannelPipeline
@@ -41,7 +50,11 @@ public class EchoServer {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
                             // EchoServerHandler 被标注为@Shareable，所以我们可以总是使用同样的实例
-                            socketChannel.pipeline().addLast(serverHandler);
+                            socketChannel.pipeline()
+                                    .addLast(new LoggingHandler(LogLevel.DEBUG))
+                                    .addLast(new StringEncoder())
+                                    .addLast(new StringDecoder())
+                                    .addLast(serverHandler);
                         }
                     });
 
