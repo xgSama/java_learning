@@ -22,15 +22,15 @@ public class DTTestClusterClient {
     static {
 
         Properties props = new Properties();
-//        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConfig.brokerList);
-        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "172.16.100.109:9092");
+        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConfig.brokerList);
+//        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "172.16.100.109:9092");
         props.setProperty(AdminClientConfig.CLIENT_ID_CONFIG, "admin-client-java");
         client = AdminClient.create(props);
     }
 
 
     public static void main(String[] args) throws Exception {
-        addTopics("zy-topic-demo");
+        addTopics("testIn");
 
 
 //        client.deleteTopics(Collections.singletonList("topic-demo")).all().get();
