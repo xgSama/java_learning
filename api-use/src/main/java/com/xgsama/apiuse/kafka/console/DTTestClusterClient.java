@@ -18,19 +18,21 @@ import java.util.function.Consumer;
  */
 public class DTTestClusterClient {
     private static AdminClient client = null;
+    private static final String brokerList = "172.16.20.21:9092,172.16.20.22:9092";
+
 
     static {
 
         Properties props = new Properties();
-        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConfig.brokerList);
-//        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "172.16.100.109:9092");
+//        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, KafkaConfig.brokerList);
+        props.setProperty(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, brokerList);
         props.setProperty(AdminClientConfig.CLIENT_ID_CONFIG, "admin-client-java");
         client = AdminClient.create(props);
     }
 
 
     public static void main(String[] args) throws Exception {
-        addTopics("testIn");
+        addTopics("zy-iceberg-userinfo");
 
 
 //        client.deleteTopics(Collections.singletonList("topic-demo")).all().get();

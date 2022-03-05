@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
@@ -23,15 +26,7 @@ import java.util.stream.Stream;
 public class Test {
 
     public static void main(String[] args) throws IOException {
-        List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
-        log.info(numbers.toString());
-        Stream<String> result = numbers.stream()
-                .sorted((i1, i2) -> i2 - i1)
-                .flatMap((Function<Integer, Stream<String>>) integer -> Stream.of(integer + "wwww"));
-
-        result.forEach(System.out::println);
-
-       test();
+        System.out.println(LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")));
     }
 
     public static void test() {

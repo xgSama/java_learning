@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * TimeUtil
@@ -23,5 +24,13 @@ public class TimeUtil {
 
     public static String dateToString(LocalDateTime time) {
         return time.format(COMMON_FORMATTER);
+    }
+
+    public static void main(String[] args) {
+          final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
+
+
+        System.out.println(formatter.format(LocalDateTime.now(ZoneId.of("UTC"))));
+
     }
 }
