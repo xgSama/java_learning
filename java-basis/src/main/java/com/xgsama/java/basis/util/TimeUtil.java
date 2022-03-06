@@ -1,6 +1,5 @@
 package com.xgsama.java.basis.util;
 
-import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -27,7 +26,7 @@ public class TimeUtil {
     }
 
     public static void main(String[] args) {
-          final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
+        final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS", Locale.ENGLISH);
 
 
         System.out.println(formatter.format(LocalDateTime.now(ZoneId.of("UTC"))));
