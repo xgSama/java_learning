@@ -18,7 +18,8 @@ import java.util.function.Consumer;
  */
 public class DTTestClusterClient {
     private static AdminClient client = null;
-    private static final String brokerList = "172.16.20.21:9092,172.16.20.22:9092";
+    private static final String brokerList = "minio:9092";
+//    private static final String brokerList = "172.16.20.21:9092,172.16.20.22:9092";
 
 
     static {
@@ -32,8 +33,14 @@ public class DTTestClusterClient {
 
 
     public static void main(String[] args) throws Exception {
-        addTopics("zy-iceberg-userinfo");
+//        addTopics("zy-iceberg-userinfo");
 
+        client.listTopics().names().get().forEach(new Consumer<String>() {
+            @Override
+            public void accept(String s) {
+                System.out.println(s);
+            }
+        });
 
 //        client.deleteTopics(Collections.singletonList("topic-demo")).all().get();
 //        resetOffset();

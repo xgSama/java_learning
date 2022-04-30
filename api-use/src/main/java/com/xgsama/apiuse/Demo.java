@@ -1,6 +1,10 @@
 package com.xgsama.apiuse;
 
+import lombok.extern.slf4j.Slf4j;
+
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -13,7 +17,11 @@ public class Demo {
     public static Integer MAXIMUM_CAPACITY = 1 << 30;
 
     public static void main(String[] args) {
-        System.out.println(tableSizeFor(10));
+
+        String s = "ssss}";
+        System.out.println(s.substring(0, s.length() - 1));
+
+//        System.out.println(tableSizeFor(10));
     }
 
     static final int tableSizeFor(int cap) {
